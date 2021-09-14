@@ -46,10 +46,10 @@ class JBRDownloadTest {
                 mavenCentral()
                 maven {
                     url = URI("https://maven.pkg.github.com/mbeddr/build.publish.jdk")
-                    if (project.hasProperty("gpr.user")){
+                    if (project.hasProperty("gpr.token")){
                          credentials {
-                            username = System.getProperty("gpr.user")
-                            password = System.getProperty("gpr.token")
+                            username = project.findProperty("gpr.user")
+                            password = project.findProperty("gpr.token")
                                     }
                       }
                 }
@@ -89,10 +89,10 @@ class JBRDownloadTest {
                 mavenCentral()
                 maven {
                     url = URI("https://maven.pkg.github.com/mbeddr/build.publish.jdk")
-                    if (project.hasProperty("gpr.user")){
+                    if (project.hasProperty("gpr.token")){
                          credentials {
-                            username = System.getProperty("gpr.user")
-                            password = System.getProperty("gpr.token")
+                            username = project.findProperty("gpr.user")
+                            password = project.findProperty("gpr.token")
                                     }
                       }
                 }
@@ -132,10 +132,10 @@ class JBRDownloadTest {
                 mavenCentral()
                 maven {
                     url = URI("https://maven.pkg.github.com/mbeddr/build.publish.jdk")
-                    if (project.hasProperty("gpr.user")){
+                    if (project.hasProperty("gpr.token")){
                          credentials {
-                            username = System.getProperty("gpr.user")
-                            password = System.getProperty("gpr.token")
+                            username = project.findProperty("gpr.user")
+                            password = project.findProperty("gpr.token")
                                     }
                       }
                 }
