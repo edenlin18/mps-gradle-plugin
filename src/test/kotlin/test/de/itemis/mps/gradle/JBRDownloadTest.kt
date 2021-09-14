@@ -45,11 +45,13 @@ class JBRDownloadTest {
             repositories {
                 mavenCentral()
                 maven {
-                    url = URI("https://maven.pkg.github.com//xbeddr/build.publish.jdk")
-                    credentials {
-                        username = project.findProperty("system.gpr.user") as String? ?: System.getenv("system.gpr.user")
-                        password = project.findProperty("system.gpr.token") as String? ?: System.getenv("system.gpr.token")
-                    }
+                    url = URI("https://maven.pkg.github.com/mbeddr/build.publish.jdk")
+                    if (project.hasProperty("gpr.user")){
+                         credentials {
+                            username = project.gpr.user
+                            password = project.gpr.token
+                                    }
+                      }
                 }
             }
             downloadJbr {
@@ -86,11 +88,13 @@ class JBRDownloadTest {
             repositories {
                 mavenCentral()
                 maven {
-                    url = URI("https://maven.pkg.github.com//mbeddr/build.publish.jdk")
-                    credentials {
-                        username = project.findProperty("system.gpr.user") as String? ?: System.getenv("system.gpr.user")
-                        password = project.findProperty("system.gpr.token") as String? ?: System.getenv("system.gpr.token")
-                    }
+                    url = URI("https://maven.pkg.github.com/mbeddr/build.publish.jdk")
+                    if (project.hasProperty("gpr.user")){
+                         credentials {
+                            username = project.gpr.user
+                            password = project.gpr.token
+                                    }
+                      }
                 }
             }
             downloadJbr {
@@ -127,12 +131,15 @@ class JBRDownloadTest {
             repositories {
                 mavenCentral()
                 maven {
-                    url = URI("https://maven.pkg.github.com//mbeddr/build.publish.jdk")
-                    credentials {
-                        username = project.findProperty("system.gpr.user") as String? ?: System.getenv("system.gpr.user")
-                        password = project.findProperty("system.gpr.token") as String? ?: System.getenv("system.gpr.token")
-                    }
+                    url = URI("https://maven.pkg.github.com/mbeddr/build.publish.jdk")
+                    if (project.hasProperty("gpr.user")){
+                         credentials {
+                            username = project.gpr.user
+                            password = project.gpr.token
+                                    }
+                      }
                 }
+                
             }
             downloadJbr {
                 jbrVersion = "11_0_10-b1145.96"
